@@ -10,12 +10,9 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="SBlogo.png"
-  />
-  <span>Welcome to SeaBattle project</span>
+<div class="welcome">
+  <h1>Welcome to SeaBattle project</h1>
+</div>
     <div class="spacer"></div>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
@@ -56,16 +53,16 @@
             <h3>Login</h3>       
             <div class ="UserName">
                 <label for="loginUsername">Username or Email</label>
-                <input type="text"#box (keyup)="getVal(box.value)" name="username"
+                <input type="text"#box (keyup)="getLogin(box.value)" name="username"
                         placeholder="Enter UserName">
                         <div class ="password">
                     <label for="Userpassword">Password</label>
-                    <input type="text" name="password" 
+                    <input type="text"#passbox (keyup)="getPassword(passbox.value)" name="password" 
                                 placeholder="Enter password">
                         </div>
                         <div class = "login-button">
-                          <button (click)="getVal(box.value)">Sign in</button>
+                          <button (click)="authFull(box.value,passbox.value)">Sign in</button>
                           
-                          <p>Box value is:{{displayVal}}</p>
+                          <p>Box value is:{{UsernameVal}}</p>
    
 

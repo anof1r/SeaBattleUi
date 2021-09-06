@@ -10,12 +10,11 @@ export class AuthorizationService {
 
   constructor(private http: HttpClient) {}
   displayVal = '';
-  getVal(val:string){
-    this.displayVal = val;
+  PasswordVal = '';
+  getUsername(username:string){
+    this.displayVal = username;
   }
-  auth(nick:string){
-    this.getVal(nick);
-    this.http.get<any>('http://localhost:11501/test//eap/'+this.displayVal+',anof1rCOOL').subscribe(message => console.log(message.value))
+  getPassword(pass:string){
+    this.PasswordVal = pass;
   }
- 
-}
+  }
