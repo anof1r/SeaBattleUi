@@ -9,14 +9,18 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
       this.app.authenticate(undefined, undefined);
     }
+
     logout() {
-      this.http.post('http://localhost:11501/test/logout', {}).subscribe(() => {
-          this.app.authenticated = false;
-          this.router.navigateByUrl('http://localhost:11501/test/login');
-      })
+          this.http.get<any>('http://localhost:4200/rest/logout').subscribe(()=>{
+            this.app.authenticated = false;
+            this.router.navigateByUrl('/home');
+          })         
     }
 }
+
+

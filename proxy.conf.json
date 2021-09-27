@@ -1,0 +1,10 @@
+{
+    "/rest": {
+      "target": "http://localhost:11501",
+      "secure": false
+    },
+    "/logout": {
+      "target": "http://localhost:11501",
+      "secure": false
+    }
+  }

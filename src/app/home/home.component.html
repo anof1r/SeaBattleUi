@@ -1,7 +1,8 @@
-<h1>Greeting</h1>
+<h1>Home Greeting</h1>
 <div [hidden]="!authenticated()">
-	<p>The ID is {{greeting.id}}</p>
-	<p>The content is {{greeting.content}}</p>
+	<p>The content is </p>
+	<p style="text-align: center;"><button type = "button" [disabled]="clicked" (click) = "waitForResponse(); clicked = true">Tap to get the message</button></p>
+	<p style="text-align: center;"><button type = "button" (click) = "startGame()">Start game</button></p>
 </div>
 <div [hidden]="authenticated()">
 	<p>Login to see your greeting</p>

@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class AppService {
 
-  authenticated = false;
+  authenticated: boolean = false;
 
   constructor(private http: HttpClient) {
   }
@@ -15,15 +15,14 @@ export class AppService {
             authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
         } : {});
 
-        this.http.get<any>('http://localhost:11501/test/user', {headers: headers}).subscribe(response => {
-            if (response.name) {
+        this.http.get<any>('http://localhost:4200/rest/user', {headers: headers}).subscribe(response => {
+            console.log(response)
+            if (response.authenticated) {
                 this.authenticated = true;
             } else {
                 this.authenticated = false;
             }
             return callback && callback();
         });
-
     }
-
 }
