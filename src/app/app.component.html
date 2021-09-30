@@ -1,9 +1,7 @@
-<div class="container">
-  <ul class="nav nav-pills">
-    <p><a routerLinkActive="active" routerLink="/home">Home</a></p>
-    <p><a routerLinkActive="active" routerLink="/login">Login</a></p>
-    <p><a (click)="logout()">Logout</a></p>
-  </ul>
+<div class = "navigateButtons">
+  <a routerLinkActive="active" routerLink="/home">Home</a>
+  <a routerLinkActive="active" routerLink="/login">Login</a>
+  <a (click)="logout()">Logout</a>
 </div>
 <div class="container">
   <router-outlet></router-outlet>
