@@ -15,6 +15,7 @@ import {
 //import { Observable } from 'rxjs/Observable';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { GameComponent } from './game/game.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -30,14 +31,16 @@ export class XhrInterceptor implements HttpInterceptor {
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
   { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'game', component: GameComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    GameComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
